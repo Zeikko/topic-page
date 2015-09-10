@@ -14,7 +14,8 @@
 <body>
   {% autoescape false %}{{header}}{% endautoescape %}
   <div class="container">
-    {% for result in results %}
+    <h1 class="keyword">{{keyword}}</h1> {% if !results.length %}
+    <h2>Sisältöä ei löytynyt asiasanalla {{keyword}}</h2> {% endif %}{% for result in results %}
     <div class="result row">
       <div class="col-md-3">
         <a href="{{result.url}}"><img alt="{{result.originalTitle || result.title}}" class="img-responsive" src="{{result.image}}" /></a>
@@ -22,7 +23,7 @@
       <div class="col-md-9">
         <div>{{result.categories.join(' > ')}}</div>
         <a href="{{result.url}}"><h2>{{result.originalTitle || result.title}}</h2></a>
-        <div>{{result.date}}</div>
+        <div>{{result.date}} | {{result.authors.join(', ')}}</div>
         <div>{% autoescape false %}{{result.originalDescription || result.summary}}{% endautoescape %}</div>
       </div>
     </div>

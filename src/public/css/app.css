@@ -10,3 +10,9 @@
 	margin-top: 0;
 	line-height: 30px;
 }
+
+.keyword {
+	text-align: center;
+	font-size: 42px;
+	text-transform: capitalize;
+}
