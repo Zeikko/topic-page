@@ -7,10 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="http://yle.fi/global/api/load.php?version=5&modules=css/headerfooter">
   <title>{{keyword}}</title>
 </head>
 
 <body>
+  {% autoescape false %}{{header}}{% endautoescape %}
   <div class="container">
     {% for result in results %}
     <div class="result row">
@@ -26,6 +28,7 @@
     </div>
     {% endfor %}
   </div>
+  {% autoescape false %}{{footer}}{% endautoescape %}
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 
